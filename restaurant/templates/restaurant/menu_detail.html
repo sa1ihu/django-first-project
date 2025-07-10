@@ -1,0 +1,20 @@
+{% extends "restaurant/base.html" %}
+
+{% block title %}{{ item.name|title }}{% endblock %}
+
+{% block content %}
+    <h2>{{ item.name|title }}</h2>
+
+    <p style="color: #c1440e;">
+        <a href="/" style="text-decoration: none; color: #999;">Home</a> /
+        <a href="/menu/" style="text-decoration: none; color: #999;">Menu</a> /
+        <span style="color: #000;">{{ item.name|title }}</span>
+    </p>
+
+    {% if item.image_url %}
+        <img src="{{ item.image_url }}" alt="{{ item.name }}" style="max-width: 45%; height: auto; margin-bottom: 1rem;">
+    {% endif %}
+
+    <p><strong>Price:</strong> ₦{{ item.price }}</p>
+    <p><strong>Description:</strong> {{ item.description }}</p>
+{% endblock %}

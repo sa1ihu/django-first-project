@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}little lemon{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Little Lemon Restaurant</h1>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include "restaurant/footer.html" %}
+</body>
+</html>

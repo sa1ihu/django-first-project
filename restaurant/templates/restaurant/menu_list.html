@@ -1,0 +1,21 @@
+{% extends "restaurant/base.html" %}
+
+{% block title %}Menu{% endblock %}
+
+{% block content %}
+    <h2 style="font-size: 2rem; margin-bottom: 1rem;">Our Menu</h2>
+    <ul style="list-style: none; padding: 0;">
+        {% for item in menu %}
+            <li style="margin-bottom: 1.5rem;">
+                <a href="/menu/{{ item.id }}/" style="text-decoration: none; color: #c1440e; font-weight: bold; font-size: 1.2rem;">
+                    {{ item.name|title }}
+                </a><br>
+                <span style="font-size: 1rem; color: #333;">
+                    ₦{{ item.price }}
+                </span>
+            </li>
+        {% empty %}
+            <li>No menu items available.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
